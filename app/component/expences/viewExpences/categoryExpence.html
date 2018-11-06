@@ -1,0 +1,90 @@
+
+<div class="page-heading">
+    <div ng-controller="categoryExpences">
+              <h4>Expences List</h4>
+
+            </div>
+</div>
+
+ <div class="container">
+     <div class="row">
+            <div class="col-sm-3 pull-right" style="margin:20px 0">
+                    <div class="input-group">
+                <input type="text" ng-model="categoryName" placeholder="Category search" class="form-control">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+                </div>
+                </div>
+     </div>
+<div class="row">
+<div class="col-sm-12">
+
+    <div class="clearfix"></div>
+<div class="table-responsive">
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Sr. no</th>
+            <th>Expences Date</th>
+            <th>Category Name</th>
+            <th>Item Name </th>
+            <th>Item Price</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="expences in expenceViewList">
+            <td>{{$index + 1}}</td>
+            <td>{{expences.transactionDate | date:'medium'}}</td>
+            <td>{{expences.category.name}}</td>
+            <td>{{expences.subCategoryName}}</td>
+            <td>{{expences.amount | currency : " &#8377"}}</td>
+              <td><button class="btn btn-xs btn-default"  ng-click="openMultipleModals(expences.id)"><i class="glyphicon glyphicon-pencil"></i></button>
+            <button class="btn btn-xs btn-default"  ng-click="itemDeleteFuc(expences.id)"><i class="glyphicon glyphicon-trash"></i></button>
+            </td>
+        </tr>
+        <tr>
+    
+        <td colspan="5" class="text-right">Total Expences: {{getExpenceAmt | currency : " &#8377"}}</td>
+        <td></td>
+        </tr>
+    </tbody>
+    </table>
+    <pagination num-pages="noOfPages" current-page="currentPage" class="pagination-small"></pagination>
+
+    <!-- <ul uib-pagination total-items="bigTotalItems" ng-model="bigCurrentPage" max-size="maxSize" class="pagination-sm" boundary-links="true" num-pages="numPages"></ul> -->
+        <!-- <ul class="pagination">
+          <li ng-class="prevPageDisabled()">
+            <a href ng-click="prevPage()">« Prev</a>
+          </li>
+          <li ng-repeat="n in range()" ng-class="{active: n == currentPage}" ng-click="setPage(n)">
+            <a href="">{{n+1}}</a>
+          </li>
+          <li ng-class="nextPageDisabled()">
+            <a href ng-click="nextPage()">Next »</a>
+          </li>
+        </ul> -->
+    
+
+</div>
+        </div></div>
+ </div>
+
+
+ <script type="text/ng-template" id="myModalContent.html">
+    <div class="modal-header">
+        <h3 class="modal-title" id="modal-title">I'm a modal!</h3>
+    </div>
+    <div class="modal-body" id="modal-body">
+        <ul>
+            <li ng-repeat="item in $ctrl.items">
+                <a href="#" ng-click="$event.preventDefault(); $ctrl.selected.item = item">{{ item }}</a>
+            </li>
+        </ul>
+        Selected: <b>{{ $ctrl.selected.item }}</b>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" type="button" ng-click="$ctrl.ok()">OK</button>
+        <button class="btn btn-warning" type="button" ng-click="$ctrl.cancel()">Cancel</button>
+    </div>
+</script>
+

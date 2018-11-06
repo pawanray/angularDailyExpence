@@ -1,0 +1,1 @@
+var app = angular.module("dailyExpensesApp",['ui.router','ngSanitize', 'ui.bootstrap']);

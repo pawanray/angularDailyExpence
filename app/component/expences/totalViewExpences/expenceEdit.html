@@ -1,0 +1,21 @@
+<div class="panel panel-default" ng-controller="expenceList">
+        <div class="panel-body">
+           <div class="panel-heading text-center">
+              <h4>Expence Edit</h4>
+           </div>
+<div class="col-sm-12 form-group">
+    <input type="text" placeholder="Category Name" class="form-control" ng-model="categoryName" readonly/>
+</div>
+<div class="col-sm-12 form-group">
+    <input type="text" placeholder="Item Name" class="form-control" ng-model="itemName"/>
+</div>
+<div class="col-sm-12 form-group">
+        <input type="text" placeholder="Item Price" class="form-control" ng-model="itemPrice"/>
+    </div>
+
+<div class="col-sm-12 text-right">
+    <input type="button" class="btn btn-danger" value="Update" ng-click="expenceEditFuc()"/>
+</div>
+
+</div>
+</div>

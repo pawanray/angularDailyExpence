@@ -1,0 +1,11 @@
+<div class="container-fluid topbar" ng-controller="topbar">
+
+        <div class="col-sm-12 text-right" style="margin-top:10px">
+                <i class="glyphicon glyphicon-piggy-bank user-icon"></i> Balance Amount (<b>{{balanceAmt | currency : "₹"}}</b>) &nbsp;
+                <i class="fa fa-money user-icon" style="background:green"></i> Income (<b> {{getUserIncome |currency : "₹"}}</b>) &nbsp;
+         <i class="glyphicon glyphicon-user user-icon"></i> {{getUserName}} &nbsp; 
+         
+         <button class="btn btn-sm btn-danger" ui-sref="login"><i class="glyphicon glyphicon-off"></i> Logout </button>
+        </div>
+    </div>
+  

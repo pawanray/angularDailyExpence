@@ -1,0 +1,29 @@
+
+<div class="clearfix"></div>
+ <div class="container">
+        <div class="row">
+<div class="col-sm-4 center-block" style="float: none; margin-top:10%" ng-controller="expence">
+    <div class="panel panel-default">
+        <div class="panel-body">
+           <div class="panel-heading text-capitalize">{{categoryName}} <a ui-sref="categoryExpences({categoryId:categoryId})" class="pull-right">View Expences List</a></div>
+
+<div class="col-sm-12 form-group">
+    <input type="text" placeholder="Item Name" class="form-control" ng-model="expCategoryName"/>
+</div>
+<div class="col-sm-12 form-group">
+        <input type="text" placeholder="Amount" class="form-control" ng-model="expAmount"/>
+    </div>
+    <div class="col-sm-12 form-group">
+            <datepicker dt="dt"></datepicker>
+           
+        </div>
+<div class="col-sm-12">
+     <a ui-sref="category">Back</a>
+    <input type="button" class="btn btn-danger pull-right" value="Add" ng-click="expenceAddFuc()"/>
+</div>
+    </div>
+
+   
+</div>
+</div>
+  </div></div>

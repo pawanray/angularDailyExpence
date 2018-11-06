@@ -1,0 +1,28 @@
+
+
+<div class="col-sm-4 center-block" style="float: none; margin-top:10%">
+    <div class="panel panel-default">
+        <div class="panel-body">
+                <div class="panel-heading">Add Category</div>
+<div class="col-sm-12 form-group">
+    <input type="text" placeholder="Category Name" class="form-control" ng-model="categroyName"/>
+</div>
+<div class="col-sm-12 form-group">
+    <input type="file" class="form-control" ng-model="iconImg"  img-upload/>
+    <img src="{{iconImg.base64}}">
+</div>
+
+<div class="col-sm-12 form-group">
+    <select  class="form-control" ng-model="categoryType">
+        <option  value="">Select Category Type</option>
+        <option  value="expence">Expence</option>
+        <option  value="income">Income</option>
+
+</select>
+</div>
+
+<div class="col-sm-12">
+    <input type="button" class="btn btn-danger" value="Add Category" ng-click="addCategory()"/>
+</div>
+    </div>
+</div>

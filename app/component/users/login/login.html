@@ -1,0 +1,30 @@
+ <div class="container">
+        <div class="row">
+<div class="col-sm-4 center-block" style="float: none; margin-top:20%">
+    <div class="panel panel-default">
+        <div class="panel-body">
+           <div class="panel-heading text-center">
+               <img src="../assets/images/logo.png"/>
+           </div>
+           <form name="myForm">
+<div class="col-sm-12 form-group">
+
+    <input type="text" name="username" placeholder="Username" class="form-control" ng-model="username" required/>
+    <div ng-show="myForm.username.$touched && myForm.username.$invalid" style="color:red">Please Enter Username</div>
+</div>
+<div class="col-sm-12 form-group">
+    <input type="text" placeholder="Password" class="form-control" ng-model="password" name="password" required/>
+    <div ng-show="myForm.password.$touched && myForm.password.$invalid" style="color:red">Please Enter Password</div>
+</div>
+
+<div class="col-sm-12 text-right">
+    <p class="text-left">You have no Account please <a ui-sref="register" href="">Sign Up</a></p>
+
+    <input type="submit" class="btn btn-danger" value="Login" ng-click="login()" ng-disabled="myForm.username.$dirty && myForm.username.$invalid ||  
+    myForm.password.$dirty && myForm.password.$invalid"/>
+</div>
+           </form>
+</div>
+</div>
+</div>
+        </div></div>

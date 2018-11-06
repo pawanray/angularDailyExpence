@@ -1,0 +1,42 @@
+
+<div ng-controller="category">
+     <div class="page-heading form-group">
+   
+          <div class="col-sm-12">
+                <h4 class="col-sm-4">Categories</h4>
+              
+          </div>
+          <div class="clearfix"></div>
+      
+     </div>
+
+     <div class="content">
+            <!-- <div class="col-sm-3 form-group pull-right text-right">
+                    <button ui-sref="addCategory" class="btn btn-danger">Add Category</button>
+                    </div> -->
+
+                    <label class="col-sm-2">Select Category</label>
+
+        <div class="col-sm-3">
+                <select ng-model="selectCategory" class="form-control" size="1" ng-change="categoryChange()">
+                    
+                    <option value="expence">Expence</option>
+                    <option value="income">Income</option>
+                </select>
+            </div>
+
+        <div class="row">
+
+    <div class="clearfix"></div>
+   
+    <div ng-repeat="category in categories" class="col-sm-3">
+        <div class="category-tiles"  ui-sref="expence({id:category.id,name:category.name})">
+    <img ng-src="{{category.iconUrl}}" width="120"/> 
+    <span>{{category.name}}</span>
+</div>
+</div>
+        </div>
+
+        </div>
+
+    </div>
